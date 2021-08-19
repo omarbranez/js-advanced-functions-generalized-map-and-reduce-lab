@@ -17,9 +17,9 @@ function reduce(source, callbackFunction, startingPoint) {
         return total
     } else {
         total = source[0]
-        source.shift() // get rid of the first element, it's been used
+        // source.shift() // get rid of the first element, it's been used
         for (const el of source) {
-            total = callbackFunction(el, total)
+            total = callbackFunction(el.shift(), total)
         }
         return total
     }
